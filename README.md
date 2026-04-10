@@ -1,16 +1,26 @@
-# courses
+# Courses
 
-Git to store courses cide
+Repository for bioinformatics and statistics course materials.
 
 ## Project Structure
 
 ```
 courses/
-├── Data/        # Raw and input data files
-├── Results/     # Outputs, reports, and processed results
-└── README.md
+└── PALOP_2026/                              # PALOP 2026 course
+    ├── Aula_0/                              # Lesson 0 — notebook with solutions
+    │   ├── Aula_Bioinformática_0.ipynb      # Main notebook for students
+    │   ├── Aula_Bioinformática_0 exercícios.ipynb  # Exercises Data
+        └── crescimento_microbiano.csv       # Microbial 
 ```
 
-## Getting Started
+## Topics Covered
 
-_Add your notes here._
+Humam Microbiota
+- Microbial growth curve analysis (lag phase, μ_max)
+- RT-PCR expression analysis (2^−ΔΔCt normalisation)
+
+
+## Requirements
+
+- Python 3.x
+- NumPy, Pandas, Matplotlib
