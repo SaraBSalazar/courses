@@ -15,13 +15,13 @@ No final do curso, os alunos serão capazes de:
 - Interpretar resultados de **RT-PCR** (valores Ct, ΔCt, ΔΔCt, *fold change*);
 - Manipular sequências de DNA/proteína com **BioPython** (*reverse complement*, tradução, alinhamentos);
 - Consultar bases de dados do **NCBI** (nucleotide, gene, BLAST) por código;
-- Detetar e **classificar mutações** genéticas e compreender o seu impacto clínico (PGT-M, PGT-A, PGT-SR).
+- Detetar e **classificar mutações** genéticas e compreender o seu impacto clínico (PGT-M).
 
 ---
 
 ## Estrutura do curso
 
-O curso está organizado num fio condutor: começa por caracterizar microrganismos em cultura pura (Aula 1), verifica quais sobrevivem em co-cultura (Aula 2) e termina na análise de mutações em contexto clínico (Aula 3).
+O curso está organizado num fio condutor: começa por caracterizar microrganismos em cultura pura (Aula 1), verifica quais sobrevivem em co-cultura (Aula 2). Num segundo projecto os alunos procedem à análise de mutações em contexto clínico (Aula 3).
 
 | Aula | Pasta | Tema | Ferramentas-chave |
 |---|---|---|---|
@@ -50,7 +50,7 @@ Análise do crescimento de **6 microrganismos** em cultura pura, a partir de lei
 1. Carregar e visualizar os dados (média ± desvio-padrão, réplicas individuais);
 2. Identificar as fases do crescimento (lag, exponencial, estacionária);
 3. Estimar os parâmetros do modelo de **Gompertz**: plateau (**A**), taxa máxima de crescimento (**μ_max**) e fase lag (**λ**);
-4. Comparar estatisticamente os organismos.
+4. Comparar estatisticamente o crescimento dos organismos.
 
 **Dados:** `crescimento_microbiano.csv` (colunas: `Strain`, `Replicate`, pontos temporais em horas).
 
@@ -68,7 +68,7 @@ Utiliza dados de **Real-Time PCR** para verificar quais espécies sobreviveram n
 **Exercício 2 — Análise dos resultados de RT-PCR:**
 - Visualização dos Ct brutos;
 - Cálculo de **ΔCt → ΔΔCt → *fold change***;
-- **Teste-t** (cultura pura vs co-cultura) e **ANOVA one-way**.
+- **Teste-t** (cultura pura vs co-cultura) e **ANOVA one-way** (siferenças entre microorganismos).
 
 **Dados:** `primer_pairs.csv` (separador `;`), `rtpcr_cocultura.csv` (`Condicao`, `Primer`, `Replicate`, `Ct_gene`, `Ct_ref`).
 
@@ -81,8 +81,7 @@ Aplica bioinformática à deteção e classificação de alterações genéticas
 | Tipo | Deteta | Exemplo clínico |
 |---|---|---|
 | **PGT-M** | Mutação num gene específico | Fibrose Quística, Huntington |
-| **PGT-A** | Número errado de cromossomas | Trissomia 21, Monossomia X |
-| **PGT-SR** | Rearranjos estruturais | Translocação Robertsoniana |
+
 
 **Atribuição de genes por grupo (Exercício 1 — PGT-M):**
 
@@ -95,11 +94,10 @@ Aplica bioinformática à deteção e classificação de alterações genéticas
 | 5 | Metabólicas e de armazenamento | `GBA`, `PAH`, `GALT`, `ABCD1` |
 | 6 | Neurológicas e neuromusculares | `PMP22`, `MPZ`, `TSC1`, `TSC2` |
 
-**Pipeline por gene:** buscar referência no **NCBI** → alinhar com sequência mutada → identificar tipo e posição da mutação → traduzir para proteína → classificar impacto (sinónima / *missense* / *nonsense* / *frameshift*) → confirmar patogenicidade (ClinVar/OMIM, *guidelines* ACMG/AMP).
+**Pipeline por gene:** retirar sequÊncia referência no **NCBI** → alinhar com sequência mutada → identificar tipo e posição da mutação → traduzir para proteína → classificar impacto (sinónima / *missense* / *nonsense* / *frameshift*) → confirmar patogenicidade (ClinVar/OMIM, *guidelines* ACMG/AMP).
 
-**Exercício 2 — PGT-A e PGT-SR:** buscar cromossomas no NCBI, simular contagem de cópias e detetar rearranjos.
 
-**Dados:** `mutacoes_reais_genes.fasta` e `mutacoes_reais_genes.csv` (IDs no formato `GENE_mutX`, ex: `CFTR_mut1`).
+**Dados:** `mutacoes_reais_genes.fasta` 
 
 ---
 
@@ -160,7 +158,6 @@ introduction_bioinformatics_PALOP_2026/
 │   ├── Aula_3_com_markdowns_v2.ipynb
 │   ├── mutacoes_reais_genes.fasta
 │   └── mutacoes_reais_genes.csv
-├── Relatórios alunos/           # Relatórios entregues pelos grupos
 └── README.md
 ```
 
