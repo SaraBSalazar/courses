@@ -55,3 +55,5 @@ __pycache__/
 *.swo
 *.tmp
 introduction_bioinformatics_PALOP_2026/Relatórios alunos/
+taken_courses/machine_learning_integration_MultiOmics_Integration_materials/data/SingleCell/scatacseq_activity_matrix.txt
+taken_courses/machine_learning_integration_MultiOmics_Integration_materials/data/SingleCell/pbmc_10k_v3.rds
